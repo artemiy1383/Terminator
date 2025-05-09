@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "modid",
+	"version": "${version}",
+	"name": "Terminator",
+	"description": "Terminator Mod is a Minecraft utility mod that provides various features to enhance the gameplay experience.",
+	"authors": [
+		"Terminator Team"
+	],
+	"contact": {
+		"homepage": "",
+		"sources": ""
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/terminator/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.terminator.TerminatorMod"
+		]
+	},
+	"mixins": [
+		"terminator.mixins.json",
+		{
+			"config": "terminator.client.mixins.json",
+			"environment": "main"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.10",
+		"minecraft": "~1.21.5",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
