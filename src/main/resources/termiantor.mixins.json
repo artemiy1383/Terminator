@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "net.terminator.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"TermiantorMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
