@@ -19,12 +19,11 @@ repositories {
 }
 
 loom {
-	splitEnvironmentSourceSets()
+//	splitEnvironmentSourceSets()
 
 	mods {
-		"termiantor" {
+		"terminator" {
 			sourceSet sourceSets.main
-			sourceSet sourceSets.client
 		}
 	}
 

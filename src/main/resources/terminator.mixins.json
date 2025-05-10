@@ -3,7 +3,7 @@
 	"package": "net.terminator.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"TermiantorMixin"
+		"TerminatorMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

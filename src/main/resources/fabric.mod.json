@@ -1,8 +1,8 @@
 {
 	"schemaVersion": 1,
-	"id": "termiantor",
+	"id": "terminator",
 	"version": "${version}",
-	"name": "Termiantor",
+	"name": "Terminator",
 	"description": "Zastivaet Iney Na Restitsah...",
 	"authors": [
 		"Termiantor Team"
@@ -16,18 +16,14 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"net.terminator.Termiantor"
+			"net.terminator.TerminatorMod"
 		],
 		"fabric-datagen": [
 			"net.terminator.TermiantorDataGenerator"
 		]
 	},
 	"mixins": [
-		"termiantor.mixins.json",
-		{
-			"config": "termiantor.client.mixins.json",
-			"environment": "client"
-		}
+		"terminator.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.16.14",
