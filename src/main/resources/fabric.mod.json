@@ -1,37 +1,39 @@
 {
-	"schemaVersion": 1,
-	"id": "terminator",
-	"version": "${version}",
-	"name": "Terminator",
-	"description": "Zastivaet Iney Na Restitsah...",
-	"authors": [
-		"Termiantor Team"
-	],
-	"contact": {
-		"homepage": "",
-		"sources": ""
-	},
-	"license": "CC0-1.0",
-	"icon": "assets/termiantor/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"net.terminator.TerminatorMod"
-		],
-		"fabric-datagen": [
-			"net.terminator.TermiantorDataGenerator"
-		]
-	},
-	"mixins": [
-		"terminator.mixins.json"
-	],
-	"depends": {
-		"fabricloader": ">=0.16.14",
-		"minecraft": "~1.21.4",
-		"java": ">=21",
-		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
-	}
+  "schemaVersion": 1,
+  "id": "terminator",
+  "version": "${version}",
+  "name": "Terminator",
+  "description": "Zastivaet Iney Na Restitsah...",
+  "authors": [
+    "Termiantor Team"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": ""
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/terminator/pack.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.terminator.TerminatorMod"
+    ],
+    "fabric-datagen": [
+      "net.terminator.TerminatorDataGenerator"
+    ],
+    "modmenu": [
+      "net.terminator.config.TerminatorModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "terminator.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.14",
+    "minecraft": "~1.21.4",
+    "java": ">=21",
+    "fabric-api": "*",
+    "modmenu": "*",
+    "cloth-config2": "*"
+  }
 }
