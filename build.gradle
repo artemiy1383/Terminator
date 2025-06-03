@@ -42,7 +42,6 @@ dependencies {
     modImplementation "me.shedaniel.cloth:cloth-config-fabric:13.0.138"
     modImplementation "com.terraformersmc:modmenu:13.0.3"
     modImplementation "me.shedaniel.cloth:cloth-config-fabric:11.0.99"
-	modImplementation "dev.vankka:minecraftdependencydownload-fabric:1.0.0"
 }
 
 processResources {

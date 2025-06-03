@@ -3,7 +3,6 @@
 	"package": "net.terminator.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"MinecraftClientMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

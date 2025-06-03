@@ -3,9 +3,12 @@ package net.terminator.config;
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
 import me.shedaniel.clothconfig2.api.ConfigBuilder;
+import me.shedaniel.clothconfig2.api.ConfigCategory;
+import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.text.Text;
+import net.terminator.account.AccountManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,12 +26,24 @@ public class TerminatorModMenuIntegration implements ModMenuApi {
                             .setTitle(Text.literal("Terminator Settings"))
                             .setSavingRunnable(() -> {});
 
-                    builder.getOrCreateCategory(Text.literal("Aura"));
-                    builder.getOrCreateCategory(Text.literal("Exploit"));
-                    builder.getOrCreateCategory(Text.literal("Movent"));
-                    builder.getOrCreateCategory(Text.literal("AntiAC"));
-                    builder.getOrCreateCategory(Text.literal("XRender"));
-                    builder.getOrCreateCategory(Text.literal("Legit"));
+                    ConfigEntryBuilder entryBuilder = ConfigEntryBuilder.create();
+
+                    // Account Tab
+                    ConfigCategory accountCategory = builder.getOrCreateCategory(Text.literal("Account"));
+                    accountCategory.addEntry(entryBuilder.startTextDescription(
+                            Text.literal("Username: " + AccountManager.getCurrentAccount().getUsername())
+                    ).build());
+                    accountCategory.addEntry(entryBuilder.startTextDescription(
+                            Text.literal("Rank: " + AccountManager.getCurrentAccount().getRank())
+                    ).build());
+                    accountCategory.addEntry(entryBuilder.startTextDescription(
+                            Text.literal("Click [here] to refresh in-game.")
+                    ).build());
+
+                    builder.getOrCreateCategory(Text.literal("Forum"));
+                    builder.getOrCreateCategory(Text.literal("T-Addons"));
+                    builder.getOrCreateCategory(Text.literal("Schematics"));
+                    builder.getOrCreateCategory(Text.literal("Feedback"));
                     builder.getOrCreateCategory(Text.literal("Settings"));
 
                     return builder.build();
@@ -71,7 +86,7 @@ public class TerminatorModMenuIntegration implements ModMenuApi {
             int y = this.height / 2 - 80;
 
             String[] categories = {
-                "Aura", "Exploit", "Movent", "AntiAC", "XRender", "Legit", "Settings"
+                "Account", "Forum", "T-Addons", "Schematics", "Feedback", "Settings"
             };
 
             for (String name : categories) {
